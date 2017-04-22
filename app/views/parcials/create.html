@@ -1,0 +1,55 @@
+<!-- Create.html -->
+<!-- <h2 ng-show="user._id!=null">Edit</h2> -->
+<h2 g-hide="user._id!=null">Create</h2>
+<hr>
+<form name="userForm" novalidate class="form-horizontal col-md-8">
+    <div class="form-group">
+        <label class="col-md-2">Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.name" name="name" ng-required="true" class="form-control" required />
+            <p ng-show="userForm.name.$error.required && (userForm.$submitted || userForm.name.$dirty)" class="text-danger">Please Enter Name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">User Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.username" name="username" ng-required="true" class="form-control" required />
+            <p ng-show="userForm.username.$error.required && (userForm.$submitted || userForm.username.$dirty)" class="text-danger">Please Enter User Name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Password</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.password" name="password" ng-required="true" class="form-control" required />
+            <p ng-show="userForm.password.$error.required && (userForm.$submitted || userForm.password.$dirty)" class="text-danger">Please Enter Password</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Email</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.email" name="email" ng-required="true" class="form-control" required />
+            <p ng-show="userForm.email.$error.required && (userForm.$submitted || userForm.email.$dirty)" class="text-danger">Please Enter Email</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Phone No.</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.phone" name="phone" ng-required="true" class="form-control" required />
+            <p ng-show="userForm.phone.$error.required && (userForm.$submitted || userForm.phone.$dirty)" class="text-danger">Please Enter Phone No.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Department</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.department" name="depart" ng-required="true" class="form-control" required />
+            <p ng-show="userForm.depart.$error.required && (userForm.$submitted || userForm.depart.$dirty)" class="text-danger">Please Enter Department Name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <!-- <input type="submit" value="Update" class="btn btn-primary" ng-show="user._id!=null" /> -->
+            <input type="submit" ng-click="insertEmployeeData(user)" value="Save" class="btn btn-primary" ng-disabled="userForm.$invalid" g-hide="user._id!=null" />
+            <a ui-sref="users" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>

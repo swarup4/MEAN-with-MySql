@@ -1,0 +1,34 @@
+<!-- index.html -->
+<h2>{{pageName}}</h2>
+<div>
+    
+</div>
+<table class="table" ng-if="users.length>0">
+    <tr>
+        <th>Emp ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Contact No.</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="user in users">
+        <td>{{user.eid}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.phone}}</td>
+        <td>
+          <span ng-show="user.status == 1">Active</span>
+          <span ng-show="user.status == 0">Inactive</span>
+        </td>
+        <td>
+            <!-- <a ui-sref="edit({id:user._id})">Edit</a> |
+            <a href="#" ng-click="deleteUser(user._id)">Delete</a> -->
+            <a ng-click="">Edit</a>
+            <a href="#" ng-click="deleteUser(user.eid)">Delete</a>
+        </td>
+    </tr>
+</table>
+<div ng-if="users.length==0">
+    No record found !!
+</div>

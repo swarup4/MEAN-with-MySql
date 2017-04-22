@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap-material-design.css" rel="stylesheet" />
+    <link href="../css/ripples.css" rel="stylesheet" />
+
+    <script src="../js/vendor/jquery-1.11.3.js"></script>
+    <script src="../js/vendor/angular.js"></script>
+    <script src="../js/vendor/angular-ui-router.js"></script>
+    <script src="../js/vendor/bootstrap.js"></script>
+    <script src="../js/vendor/material.js"></script>
+    <script src="../js/vendor/ripples.js"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="users">MEAN CRUD</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="users">Home</a></li>
+          <li><a ui-sref="create">Create</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div ui-view></div>
+    </div>
+    <script src="../js/app/app.js"></script>
+    <script src="../js/app/services/service.js"></script>
+    <script src="../js/app/controllers/controller.js"></script>
+  </body>
+</html>
