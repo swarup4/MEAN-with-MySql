@@ -2,7 +2,7 @@
 var express = require('express');
 var path = require('path');
 var router = express.Router();
-var session = require('express-session');
+//var session = require('express-session');
 var bodyParser = require('body-parser');
 var routes = require('./server/routes/web'); //web routes
 var apiRoutes = require('./server/routes/api'); //api routes
@@ -15,11 +15,11 @@ var app = express();
 //=== get all the data from the body (POST)===
 
 //===configuration for Session Management===
-app.use(session({
-    secret: 'ssshhhhh',
-    resave: false,
-    saveUninitialized: true
-}));
+// app.use(session({
+//     secret: 'ssshhhhh',
+//     resave: false,
+//     saveUninitialized: true
+// }));
 
 // parse application/json
 app.use(bodyParser.json());
@@ -37,7 +37,7 @@ app.use(routes);
 app.use(apiRoutes);
 
 // setting port number for running server
-var port = process.env.port || 3000;
+var port = process.env.port || 3001;
 
 // starting express server
 app.listen(port, function() {

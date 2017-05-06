@@ -42,13 +42,13 @@ router.post("/", function(req, res) {
             connection.end();
         }
     });
-}).put("/:id", function(req, res) {
+});
+router.put("/:id", function(req, res) {
     debugger;
     var id = req.params.id;
-    var statusCode = 0;
-    var sql = 'update employee set status =' + statusCode + ' where eid = ' + id;
-    console.log(sql);
-    connection.query(sql, function(err, rows, fields) {
+    var data = req.body;
+    var sql = 'update employee set ? where eid = ?';
+    connection.query(sql, [data, id], function(err, rows, fields) {
        if (!err){
            res.send(rows);
        }
@@ -57,15 +57,20 @@ router.post("/", function(req, res) {
            connection.end();
        }
    });
-}).delete("/:id", function(req, res) {
-    // var id = req.params.id;
-    // user.findByIdAndRemove(id, function(err) {
-    //     if (err) {
-    //         res.send("error");
-    //         return;
-    //     }
-    //     res.send("deleted");
-    // });
+});
+router.delete("/:id", function(req, res) {
+    var id = req.params.id;
+    var statusCode = 0;
+    var sql = 'update employee set status = ? where eid = ?';
+    connection.query(sql, [statusCode, id], function(err, rows, fields) {
+       if (!err){
+           res.send(rows);
+       }
+       else{
+           console.log('Error while performing Query.');
+           connection.end();
+       }
+   });
 });
 
 module.exports = router;

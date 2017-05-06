@@ -33,7 +33,7 @@ app.factory("userService", ['$http', '$q','apiUrl', function(http, q, apiUrl){
         },
         editEmployeeData: function(id, data){
             var deferred = q.defer();
-            http.post(getEmployeeUrl + id, data).success(function (data, status) {
+            http.put(getEmployeeUrl + id, data).success(function (data, status) {
                 deferred.resolve(data);
             }).error(function (data, status) {
                 deferred.reject(data);
@@ -42,7 +42,7 @@ app.factory("userService", ['$http', '$q','apiUrl', function(http, q, apiUrl){
         },
         deleteEmployeeData: function(id){
             var deferred = q.defer();
-            http.put(getEmployeeUrl + id).success(function (data, status) {
+            http.delete(getEmployeeUrl + id).success(function (data, status) {
                 deferred.resolve(data);
             }).error(function (data, status) {
                 deferred.reject(data);

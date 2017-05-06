@@ -1,55 +1,95 @@
 <!-- Create.html -->
 <!-- <h2 ng-show="user._id!=null">Edit</h2> -->
-<h2 g-hide="user._id!=null">Create</h2>
+<h2>Create</h2>
+<div class="alert alert-primary alert-dismissible" role="alert" ng-if="success">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Success!</strong> {{successMsg}}
+</div>
+<div class="alert alert-danger alert-dismissible" role="alert" ng-if="error">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Error!</strong> {{errorMsg}}
+</div>
 <hr>
-<form name="userForm" novalidate class="form-horizontal col-md-8">
-    <div class="form-group">
-        <label class="col-md-2">Name</label>
-        <div class="col-md-10">
-            <input type="text" ng-model="user.name" name="name" ng-required="true" class="form-control" required />
-            <p ng-show="userForm.name.$error.required && (userForm.$submitted || userForm.name.$dirty)" class="text-danger">Please Enter Name</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-2">User Name</label>
-        <div class="col-md-10">
-            <input type="text" ng-model="user.username" name="username" ng-required="true" class="form-control" required />
-            <p ng-show="userForm.username.$error.required && (userForm.$submitted || userForm.username.$dirty)" class="text-danger">Please Enter User Name</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-2">Password</label>
-        <div class="col-md-10">
-            <input type="text" ng-model="user.password" name="password" ng-required="true" class="form-control" required />
-            <p ng-show="userForm.password.$error.required && (userForm.$submitted || userForm.password.$dirty)" class="text-danger">Please Enter Password</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-2">Email</label>
-        <div class="col-md-10">
-            <input type="text" ng-model="user.email" name="email" ng-required="true" class="form-control" required />
-            <p ng-show="userForm.email.$error.required && (userForm.$submitted || userForm.email.$dirty)" class="text-danger">Please Enter Email</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-2">Phone No.</label>
-        <div class="col-md-10">
-            <input type="text" ng-model="user.phone" name="phone" ng-required="true" class="form-control" required />
-            <p ng-show="userForm.phone.$error.required && (userForm.$submitted || userForm.phone.$dirty)" class="text-danger">Please Enter Phone No.</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-2">Department</label>
-        <div class="col-md-10">
-            <input type="text" ng-model="user.department" name="depart" ng-required="true" class="form-control" required />
-            <p ng-show="userForm.depart.$error.required && (userForm.$submitted || userForm.depart.$dirty)" class="text-danger">Please Enter Department Name</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <!-- <input type="submit" value="Update" class="btn btn-primary" ng-show="user._id!=null" /> -->
-            <input type="submit" ng-click="insertEmployeeData(user)" value="Save" class="btn btn-primary" ng-disabled="userForm.$invalid" g-hide="user._id!=null" />
-            <a ui-sref="users" class="btn btn-warning">Cancel</a>
-        </div>
-    </div>
-</form>
+<div class="col-sm-6">
+  <form name="userForm" novalidate class="form-horizontal">
+      <div class="form-group">
+          <label class="col-md-3">Name</label>
+          <div class="col-md-9">
+              <input type="text" ng-model="users.name" name="name" ng-required="true" class="form-control" required />
+              <p ng-show="userForm.name.$error.required && (userForm.$submitted || userForm.name.$dirty)" class="text-danger">Please Enter Name</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="col-md-3">User Name</label>
+          <div class="col-md-9">
+              <input type="text" ng-model="users.username" name="username" ng-required="true" class="form-control" required />
+              <p ng-show="userForm.username.$error.required && (userForm.$submitted || userForm.username.$dirty)" class="text-danger">Please Enter User Name</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="col-md-3">Password</label>
+          <div class="col-md-9">
+              <input type="text" ng-model="users.password" name="password" ng-required="true" class="form-control" required />
+              <p ng-show="userForm.password.$error.required && (userForm.$submitted || userForm.password.$dirty)" class="text-danger">Please Enter Password</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="col-md-3">Email</label>
+          <div class="col-md-9">
+              <input type="text" ng-model="users.email" name="email" ng-required="true" class="form-control" required />
+              <p ng-show="userForm.email.$error.required && (userForm.$submitted || userForm.email.$dirty)" class="text-danger">Please Enter Email</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="col-md-3">Phone No.</label>
+          <div class="col-md-9">
+              <input type="text" ng-model="users.phone" name="phone" ng-required="true" class="form-control" required />
+              <p ng-show="userForm.phone.$error.required && (userForm.$submitted || userForm.phone.$dirty)" class="text-danger">Please Enter Phone No.</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="col-md-3">Department</label>
+          <div class="col-md-9">
+              <input type="text" ng-model="users.department" name="depart" ng-required="true" class="form-control" required />
+              <p ng-show="userForm.depart.$error.required && (userForm.$submitted || userForm.depart.$dirty)" class="text-danger">Please Enter Department Name</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+              <!-- <input type="submit" value="Update" class="btn btn-primary" ng-show="user._id!=null" /> -->
+              <input type="submit" ng-click="insertEmployeeData(users)" value="Save" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-show="saveData" />
+              <input type="submit" ng-click="updateEmployeeData(userId, users)" value="Update" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-hide="saveData" />
+              <!-- <a ui-sref="users" class="btn btn-warning">Cancel</a> -->
+              <input type="reset" value="Cancel" class="btn btn-warning">
+          </div>
+      </div>
+  </form>
+</div>
+<div class="col-sm-6">
+  <table class="table table-hover able-striped" g-if="users.length>0">
+      <tr>
+          <th>Emp ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Contact No.</th>
+          <th>Status</th>
+          <th>Actions</th>
+      </tr>
+      <tr ng-repeat="user in employee">
+          <td>{{user.eid}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.phone}}</td>
+          <td>
+            <span ng-show="user.status == 1" class="label label-primary">Active</span>
+            <span ng-show="user.status == 0" class="label label-danger">Inactive</span>
+          </td>
+          <td>
+              <!-- <a ui-sref="edit({id:user._id})">Edit</a> |
+              <a href="#" ng-click="deleteUser(user._id)">Delete</a> -->
+              <a href="" ng-click="editEmployee(user.eid)" class="text-primary"><span class="glyphicon glyphicon-edit"></span></a>
+              <a href="" ng-click="deleteEmployee(user.eid)" class="text-danger"><span class="glyphicon glyphicon-trash"></span></a>
+          </td>
+      </tr>
+  </table>
+</div>
