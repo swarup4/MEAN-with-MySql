@@ -3,15 +3,24 @@
   "version": "1.0.0",
   "description": "Mean App",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "color": "^1.0.3",
+    "express": "^4.14.1",
+    "mongodb": "^2.2.24",
+    "mongojs": "^2.4.0",
+    "mysql": "^2.13.0",
+    "mongoose": "^4.8.4",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "q": "^1.4.1",
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [
-    "mean",
-    "crud",
-    "crud",
-    "operations"
+    "mean", "mean with mysql", "crud"
   ],
   "author": "Swarup Saha",
   "license": "ISC"
