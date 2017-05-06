@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `angular`
+-- Database: `mean`
 --
 
 -- --------------------------------------------------------
@@ -43,9 +43,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
 --
 
 INSERT INTO `employee` (`eid`, `name`, `username`, `password`, `email`, `phone`, `department`, `status`) VALUES
-(1, 'Swarup Saha', 'inssaha20', 'swarup123', 'swarup.saha@symphonyteleca.com', 9035845781, 'aldata', 0),
-(2, 'Shashi Shekhar', 'insshekhar', 'shashi@123', 'shashi.shekhar@gmail.com', 9560918064, 'aldata', 1),
-(8, 'Swarup Saha', 'swarup007', 'Swarup@123', 'strangefriendship3@gmail.com', 8882311531, 'Aldata', 1);
+(1, 'Swarup Saha', 'inssaha20', 'swarup123', 'swarup.saha@symphonyteleca.com', 9035845781, 'aldata', 0);
 
 -- --------------------------------------------------------
 
