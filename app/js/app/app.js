@@ -3,7 +3,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
 
   $stateProvider.state("login", {
-      url: "/login",
+      url: "/",
       templateUrl: "../views/parcials/login.html",
       controller: "userController"
   });
@@ -13,7 +13,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   //   controller: "userController"
   // });
   $stateProvider.state("create", {
-      url: "/",
+      url: "/signup",
       templateUrl: "../views/parcials/create.html",
       controller: "userController"
   });

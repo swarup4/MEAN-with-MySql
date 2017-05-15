@@ -74,9 +74,21 @@ app.controller('userController', ['$scope', 'userService', function(scope, userS
 
     scope.loginUser = function(users){
         userService.loginUsers(users).then(function(data){
-            scope.users = data;
+            if(data.length == 0){
+                scope.error = true;
+                scope.success = false;
+                scope.errorMsg = "Incorrect User ID & Password";
+            }else{
+                scope.user = data;
+                scope.error = false;
+                scope.success = true;
+                scope.successMsg = "Successfully Login";
+            }
+            
         }, function(err){
             console.log(err);
+            scope.error = true;
+            scope.errorMsg = "Something is wrong";
         });
     }
 }]);

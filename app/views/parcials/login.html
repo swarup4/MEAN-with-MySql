@@ -1,15 +1,40 @@
-<a href="/">Login</a>
+<!--<a href="/">Login</a>-->
+<h2>Login Page</h2>
+<div class="alert alert-primary alert-dismissible" role="alert" ng-if="success">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Success!</strong> {{successMsg}}
+</div>
+<div class="alert alert-danger alert-dismissible" role="alert" ng-if="error">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Error!</strong> {{errorMsg}}
+</div>
 
-<div class="inputs">
-  <h2>Login Page</h2>
+{{user}}
+<hr>
+<div class="col-md-6 col-sm-10">
+    <form name="userForm" novalidate class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-3">User Name</label>
+            <div class="col-md-9">
+                <input type="text" ng-model="users.username" name="username" ng-required="true" class="form-control" required />
+                <p ng-show="userForm.username.$error.required && (userForm.$submitted || userForm.username.$dirty)" class="text-danger">Please Enter User Name</p>
+            </div>
+        </div>
 
-  <div class="form-group label-static">
-    <label for="i2" class="control-label">Username</label>
-    <input type="email" class="form-control" id="i2" placeholder="placeholder attribute">
-  </div>
+        <div class="form-group">
+            <label class="col-md-3">Password</label>
+            <div class="col-md-9">
+                <input type="text" ng-model="users.password" name="password" ng-required="true" class="form-control" required />
+                <p ng-show="userForm.password.$error.required && (userForm.$submitted || userForm.password.$dirty)" class="text-danger">Please Enter Password</p>
+            </div>
+        </div>
 
-  <div class="form-group label-floating">
-    <label for="i5" class="control-label">Password</label>
-    <input type="email" class="form-control" id="i5">
-  </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" ng-click="loginUser(users)" value="Login" class="btn btn-primary" ng-disabled="userForm.$invalid" />
+                <input type="reset" value="Cancel" class="btn btn-warning">
+            </div>
+        </div>
+    </form>
+  
 </div>

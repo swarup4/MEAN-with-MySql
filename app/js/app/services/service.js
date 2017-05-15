@@ -1,5 +1,6 @@
 app.factory("userService", ['$http', '$q','apiUrl', function(http, q, apiUrl){
-    var getEmployeeUrl = apiUrl + "/user/";
+    var getEmployeeUrl = apiUrl + "/user";
+    var getLoginUrl = apiUrl + "/login";
 
     return{
         getEmployee: function(){
@@ -46,6 +47,15 @@ app.factory("userService", ['$http', '$q','apiUrl', function(http, q, apiUrl){
                 deferred.resolve(data);
             }).error(function (data, status) {
                 deferred.reject(data);
+            });
+            return deferred.promise;
+        },
+        loginUsers: function(data){
+            var deferred = q.defer();
+            http.post(getLoginUrl, data).success(function (data, status) {
+                deferred.resolve(data);
+            }).error(function (err, status) {
+                deferred.reject(err);
             });
             return deferred.promise;
         }
