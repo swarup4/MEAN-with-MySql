@@ -1,4 +1,4 @@
-app.controller('userController', ['$scope', 'userService', function(scope, userService){
+app.controller('userController', ['$scope', 'userService', '$location', function(scope, userService, location){
     scope.pageName = "Home Page";
     scope.saveData = true;
     scope.success = false;
@@ -76,13 +76,13 @@ app.controller('userController', ['$scope', 'userService', function(scope, userS
         userService.loginUsers(users).then(function(data){
             if(data.length == 0){
                 scope.error = true;
-                scope.success = false;
                 scope.errorMsg = "Incorrect User ID & Password";
             }else{
-                scope.user = data;
                 scope.error = false;
                 scope.success = true;
                 scope.successMsg = "Successfully Login";
+                console.log(data);
+                location.url("/home")
             }
             
         }, function(err){

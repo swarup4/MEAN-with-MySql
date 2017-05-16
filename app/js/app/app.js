@@ -13,7 +13,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   //   controller: "userController"
   // });
   $stateProvider.state("create", {
-      url: "/signup",
+      url: "/home",
       templateUrl: "../views/parcials/create.html",
       controller: "userController"
   });

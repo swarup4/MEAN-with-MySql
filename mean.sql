@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
 --
 
 INSERT INTO `employee` (`eid`, `name`, `username`, `password`, `email`, `phone`, `department`, `status`) VALUES
-(1, 'Swarup Saha', 'inssaha20', 'swarup123', 'swarup.saha@symphonyteleca.com', 9035845781, 'aldata', 0);
+(1, 'Swarup Saha', 'inssaha20', 'swarup123', 'swarup.saha20@harman.com', 9035845781, 'aldata', 1);
 
 -- --------------------------------------------------------
 

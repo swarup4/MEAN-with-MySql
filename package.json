@@ -7,21 +7,25 @@
     "body-parser": "^1.16.1",
     "color": "^1.0.3",
     "express": "^4.14.1",
+    "express-sessions":"^1.0.0",
+    "jsonwebtoken": "^7.3.0",
     "mongodb": "^2.2.24",
     "mongojs": "^2.4.0",
-    "mysql": "^2.13.0",
     "mongoose": "^4.8.4",
+    "mysql": "^2.13.0",
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "q": "^1.4.1",
+    "q": "^1.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [
-    "mean", "mean with mysql", "crud"
+    "mean",
+    "mean with mysql",
+    "crud"
   ],
   "author": "Swarup Saha",
   "license": "ISC"
